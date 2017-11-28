@@ -1,3 +1,5 @@
+#include <iostream>
+#include <stdlib.h>
 #include <vector>
 
 std::vector<int> lienordni(long long n) { // Awesome Lienordni Function (ALF)
@@ -89,4 +91,16 @@ bool lienprime(long long n) {
 	}
 
 	return true;
+}
+
+int main(int argc, char* argv[]){
+	long long x;
+		
+	if(argc==1)
+		std::cin>>x;
+
+	else
+		x=atoll(argv[1]);
+
+	std::cout<<((lienprime(x))?("YES"):("NO"))<<std::endl;
 }

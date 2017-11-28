@@ -1,20 +1,20 @@
 #include <iostream>
 #include <stdlib.h>
 
-typedef long long lien;
+typedef long long ll;
 
-lien extended_euclidean_algorithm(lien b, lien c) {
-	lien r0=b;
-	lien r1=c;
+ll extended_euclidean_algorithm(ll b, ll c) {
+	ll r0=b;
+	ll r1=c;
 
-	lien x0=1;
-	lien x1=0;
+	ll x0=1;
+	ll x1=0;
 
-	lien y0=0;
-	lien y1=1;
+	ll y0=0;
+	ll y1=1;
 
-	lien r,x,y;
-	lien q;
+	ll r,x,y;
+	ll q;
 
 	while(true) {
 		q=r0/r1;
@@ -41,18 +41,18 @@ lien extended_euclidean_algorithm(lien b, lien c) {
 
 } 
 
-void solve(lien a, lien b, lien c) { // Solutions for the linear diophantine equation ax+by=c
-	lien r0=a;
-	lien r1=b;
+void solve(ll a, ll b, ll c) { // Solutions for the linear diophantine equation ax+by=c
+	ll r0=a;
+	ll r1=b;
 
-	lien x0=1;
-	lien x1=0;
+	ll x0=1;
+	ll x1=0;
 
-	lien y0=0;
-	lien y1=1;
+	ll y0=0;
+	ll y1=1;
 
-	lien r,x,y;
-	lien q;
+	ll r,x,y;
+	ll q;
 
 	while(true) {
 		q=r0/r1;

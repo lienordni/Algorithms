@@ -1,5 +1,4 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -70,7 +69,7 @@ node* make_blue_print(int l, int r){
 }
 
 ll combine(ll a, ll b){
-	return a+b; //CHANGE
+	return __gcd(a,b); //CHANGE
 }
 
 void merge(node* ptr, node* left, node* right){
@@ -141,8 +140,8 @@ void update_value(node* root,int index, ll newval){
 		return;
 
 	if(root->l==root->r){
-		root->value+=diff; //change
-		v[index]+=diff; //change
+		root->value=newval; //change
+		v[index]=newval; //change
 		return;
 	}
 
@@ -157,22 +156,18 @@ void update_value(node* root,int index, ll newval){
 		update_value(root->right,index,newval);
 	}
 
-	root->value=root->left->value+root->right->value; // CHANGE
+	root->value=__gcd(root->left->value,root->right->value); // CHANGE
 }
 
 int main(){
-	v={73,27,51,99,46,3,17,93,91,40};
+	v={2,4,6,9,10};
 	node* tree;
 
 	tree=make_tree(v);
-	cout<<range_query(tree,3,7)<<endl;;
-	print(v);
+	cout<<range_query(tree,1,4)<<endl;;
 
-	update_value(tree,3,200);
+	update_value(tree,3,20);
 
-	cout<<range_query(tree,3,7)<<endl;;
-	print(v);
-
-
+	cout<<range_query(tree,1,4)<<endl;;
 }
 
